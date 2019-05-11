@@ -4,5 +4,6 @@ public class MotorBoat extends Vehicle {
 
     int MaxDistance;
     int displacement;
+    //
 
 }
