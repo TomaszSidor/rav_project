@@ -1,4 +1,4 @@
-package pl.sda.rav.Vehicle;
+package pl.sda.rav.vehicle;
 
 public enum CarBodyType {
 
