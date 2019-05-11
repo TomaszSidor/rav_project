@@ -2,7 +2,7 @@ package pl.sda.rav.Vehicle;
 
 import java.time.LocalDate;
 
-public class Car extends Vehicle {
+public class Car extends Vehicle implements Comparable<Vehicle> {
 
     int maxDistance;
     CarBodyType bodyType;
