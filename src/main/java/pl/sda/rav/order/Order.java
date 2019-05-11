@@ -1,6 +1,6 @@
-package pl.sda.rav.Order;
+package pl.sda.rav.order;
 
-import pl.sda.rav.Vehicle.Vehicle;
+import pl.sda.rav.vehicle.Vehicle;
 import pl.sda.rav.users.User;
 
 public class Order {
@@ -18,6 +18,7 @@ public class Order {
         this.vehicle = vehicle;
         this.period = period;
         COUNT++;
+
     }
 
     public int getId() {
