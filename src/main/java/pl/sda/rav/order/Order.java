@@ -4,7 +4,6 @@ import pl.sda.rav.vehicle.Vehicle;
 import pl.sda.rav.users.User;
 
 public class Order {
-
     private static int COUNT = 1;
 
     private int id;
@@ -12,13 +11,11 @@ public class Order {
     private Vehicle vehicle;
     private Period period;
 
-    public Order(int id, User customer, Vehicle vehicle, Period period) {
-        this.id = COUNT;
+    public Order(User customer, Vehicle vehicle, Period period) {
+        this.id = COUNT++;
         this.customer = customer;
         this.vehicle = vehicle;
         this.period = period;
-        COUNT++;
-
     }
 
     public int getId() {
@@ -35,5 +32,20 @@ public class Order {
 
     public Period getPeriod() {
         return period;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Order order = (Order) o;
+
+        return id == order.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return id;
     }
 }

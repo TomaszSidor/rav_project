@@ -4,14 +4,12 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class OrdersDao {
-    Set <Order> orders = new HashSet<>();
-
-    public OrdersDao(Set<Order> orders) {
-        this.orders = orders;
-    }
+    private Set<Order> orders = new HashSet<>();
 
     public void addOrder(Order order){
-        orders.add(order);
+        if(isAvailable(order.getPeriod(), order.getVehicle().getVIN())) {
+            orders.add(order);
+        }
     }
 
     public boolean isAvailable(Period period, String VIN){
@@ -26,4 +24,7 @@ public class OrdersDao {
         return true;
     }
 
+    public Set<Order> getOrders() {
+        return orders;
+    }
 }
