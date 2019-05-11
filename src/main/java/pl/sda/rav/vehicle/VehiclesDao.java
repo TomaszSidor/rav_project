@@ -37,9 +37,8 @@ public class VehiclesDao {
         } return false;
     }
 
-    // wypisanie listy pojazdów z kolekcji
+    public void removeVehicle (ArrayList<Vehicle> vehicles, int id) {
 
-    public ArrayList<Vehicle> getVehicleList () {
-        return listOfVehicle;
+        vehicles.listIterator(id).remove();
     }
 }
