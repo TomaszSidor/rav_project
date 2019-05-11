@@ -6,7 +6,7 @@ public abstract class Vehicle implements Comparable<Vehicle> {
 
     public String VIN;
     public String name;
-    public  LocalDate productionDate;
+    public LocalDate productionDate;
 
     public Vehicle(String VIN, String name, LocalDate productionDate) {
         this.VIN = VIN;
@@ -36,9 +36,6 @@ public abstract class Vehicle implements Comparable<Vehicle> {
         if (productionDate.compareTo(v.productionDate) != 0 ) {
             return productionDate.compareTo(v.productionDate);
         }
-
-        return v.getName().compareTo(getName());
+        return (name.compareTo(v.name));
     }
-
-
 }

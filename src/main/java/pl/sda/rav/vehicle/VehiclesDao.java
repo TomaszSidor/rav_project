@@ -6,22 +6,23 @@ import java.util.Comparator;
 
 public class VehiclesDao {
 
-    ArrayList<Vehicle> listOfVehicle = new ArrayList<>();
+    private ArrayList<Vehicle> listOfVehicle = new ArrayList<>();
 
-    // getter
+    // getter i zabezpieczenie danych przez modyfikacją
+
     public ArrayList<Vehicle> getListOfVehicle() {
+        ArrayList<Vehicle> list = new ArrayList<>(listOfVehicle);
         return listOfVehicle;
     }
 
     public void addVehicle (Vehicle vehicle) {
 
         listOfVehicle.add(vehicle);
-
     }
 
-    public void sortVehicle (ArrayList listOfVehicle) {
-//        Collections.sort();
 
+    public void sortVehicle (ArrayList listOfVehicle) {
+        Collections.sort(listOfVehicle);
     }
 
     public boolean isExist (ArrayList<Vehicle> listOfVehicle) {
