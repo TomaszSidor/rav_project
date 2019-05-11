@@ -2,7 +2,6 @@ package pl.sda.rav.vehicle;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 
 public class VehiclesDao {
 
@@ -15,63 +14,32 @@ public class VehiclesDao {
         return listOfVehicle;
     }
 
+    // dodawanie pojazdu wraz ze sprawdzeniem czy już istnieje w kolekcji;
+
     public void addVehicle (Vehicle vehicle) {
 
+        if (isExist(listOfVehicle, vehicle) == false) {
+            return;
+        }
         listOfVehicle.add(vehicle);
     }
 
+    // sortowanie które działa na zasadzie cmpareTo nadpisanej w klasie Vehicle!!!
 
-    public void sortVehicle (ArrayList listOfVehicle) {
+    public void sortVehicles (ArrayList listOfVehicle) {
         Collections.sort(listOfVehicle);
     }
 
-    public boolean isExist (ArrayList<Vehicle> listOfVehicle) {
+    public boolean isExist (ArrayList<Vehicle> listOfVehicle, Vehicle vehicle) {
 
-        for (Vehicle vehicle : listOfVehicle) {
-            if (vehicle.getVIN().equals(vehicle.VIN));
+        for (Vehicle v : listOfVehicle) {
+            if (v.getVIN().equals(vehicle.VIN));
         } return false;
     }
 
-    public ArrayList<Vehicle> getVehicleList () {
+    // wypisanie listy pojazdów z kolekcji
 
+    public ArrayList<Vehicle> getVehicleList () {
         return listOfVehicle;
     }
-
-
-
-
-    //    public static Comparator<vehicle> vehiclesComparatorByYear = new Comparator<vehicle>() {
-//        @Override
-//        public int compare(vehicle v1, vehicle v2) {
-//
-//            Integer value1 = v1.getProductionDate().getYear();
-//            Integer value2 = v2.getProductionDate().getYear();
-//            value2.compareTo(value1);
-//
-//            return value2.compareTo(value1);
-//
-//        }
-//    };
-//
-//
-//    public static Comparator<vehicle> vehiclesComparatorByName = new Comparator<vehicle>() {
-//        @Override
-//        public int compare(vehicle v1, vehicle v2) {
-//
-//            String value1 = v1.getName();
-//            String value2 = v2.getName();
-//            value2.compareTo(value1);
-//
-//            return value2.compareTo(value1);
-//
-//        }
-//    };
-//
-//    public void sortVehicles (ArrayList listOfVehicle) {
-//
-//        Collections.sort(listOfVehicle, vehiclesComparatorByName);
-//        Collections.sort(listOfVehicle, vehiclesComparatorByYear);
-//    }
-
-
 }
