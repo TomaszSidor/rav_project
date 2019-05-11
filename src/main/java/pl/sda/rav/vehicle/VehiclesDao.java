@@ -1,4 +1,4 @@
-package pl.sda.rav.Vehicle;
+package pl.sda.rav.vehicle;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -20,17 +20,28 @@ public class VehiclesDao {
     }
 
     public void sortVehicle (ArrayList listOfVehicle) {
+//        Collections.sort();
 
+    }
 
+    public boolean isExist (ArrayList<Vehicle> listOfVehicle) {
 
+        for (Vehicle vehicle : listOfVehicle) {
+            if (vehicle.getVIN().equals(vehicle.VIN));
+        } return false;
+    }
+
+    public ArrayList<Vehicle> getVehicleList () {
+
+        return listOfVehicle;
     }
 
 
 
 
-    //    public static Comparator<Vehicle> vehiclesComparatorByYear = new Comparator<Vehicle>() {
+    //    public static Comparator<vehicle> vehiclesComparatorByYear = new Comparator<vehicle>() {
 //        @Override
-//        public int compare(Vehicle v1, Vehicle v2) {
+//        public int compare(vehicle v1, vehicle v2) {
 //
 //            Integer value1 = v1.getProductionDate().getYear();
 //            Integer value2 = v2.getProductionDate().getYear();
@@ -42,9 +53,9 @@ public class VehiclesDao {
 //    };
 //
 //
-//    public static Comparator<Vehicle> vehiclesComparatorByName = new Comparator<Vehicle>() {
+//    public static Comparator<vehicle> vehiclesComparatorByName = new Comparator<vehicle>() {
 //        @Override
-//        public int compare(Vehicle v1, Vehicle v2) {
+//        public int compare(vehicle v1, vehicle v2) {
 //
 //            String value1 = v1.getName();
 //            String value2 = v2.getName();
