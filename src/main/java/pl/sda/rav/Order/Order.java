@@ -1,4 +1,4 @@
-package pl.sda.rav;
+package pl.sda.rav.Order;
 
 import pl.sda.rav.Vehicle.Vehicle;
 import pl.sda.rav.users.User;

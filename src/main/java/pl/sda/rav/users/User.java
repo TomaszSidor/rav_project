@@ -3,12 +3,12 @@ package pl.sda.rav.users;
 public class User {
     private String login;
     private String password;
-    private boolean isAdmin;
+    private UserType userType;
 
-    public User(String login, String password, boolean isAdmin) {
+    public User(String login, String password, UserType userType) {
         this.login = login;
         this.password = password;
-        this.isAdmin = isAdmin;
+        this.userType = userType;
     }
 
     public String getLogin() {
@@ -19,11 +19,11 @@ public class User {
         return password;
     }
 
-    public boolean isAdmin() {
-        return isAdmin;
+    public UserType userType() {
+        return userType;
     }
 
-    public void setAdmin(boolean admin) {
-        isAdmin = admin;
+    public void userType(UserType userType) {
+        this.userType = userType;
     }
 }
